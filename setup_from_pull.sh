@@ -2,6 +2,12 @@
 
 set -e
 
+# This script updates the repository before running.
+#
+# NOTE: This script will *not* update symlinks for files
+# 	That are updated. It does run the full 
+#	`setup_from_clone.sh` script, though.
+
 SOURCE=${BASH_SOURCE[0]}
 
 # Handles symbolic links
@@ -14,7 +20,6 @@ done
 
 DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
-# This script updates the repository before running.
 
 git fetch
 git pull
