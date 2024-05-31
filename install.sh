@@ -11,10 +11,11 @@ curl -L https://nixos.org/nix/install | sh
 
 # Installing packages
 nix-env -iA \
+	nixpkgs.gcc \
 	nixpkgs.git \
-	nixpkgs.zsh \
 	nixpkgs.neovim \
-	nixpkgs.gcc
+	nixpkgs.antibody \
+	nixpkgs.zsh 
 
 # Install dotfiles from local script
 SOURCE=${BASH_SOURCE[0]}
@@ -30,3 +31,10 @@ done
 DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
 $DIR/setup_from_clone.sh
+
+# Ensure zsh is a login shell.
+command -v zsh | sudo tee -a /etc/shells
+
+sudo chsh -s $(command -v zsh) $USER
+
+#
