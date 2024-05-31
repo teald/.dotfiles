@@ -10,3 +10,5 @@ zstyle :compinstall filename '/home/teal/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+if [ -e /home/teal/.nix-profile/etc/profile.d/nix.sh ]; then . /home/teal/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
