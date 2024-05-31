@@ -117,4 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 # VI keybinding for terminal entry
-set -e vi
+set -o vi
