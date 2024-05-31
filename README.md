@@ -1,4 +1,4 @@
-# shell_config_files
+# `.dotfiles`
 Collection of shell configuration files.
 
 # To-Do
