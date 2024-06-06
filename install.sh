@@ -9,14 +9,11 @@ curl -L https://nixos.org/nix/install | sh
 
 . ~/.nix-profile/etc/profile.d/nix.sh
 
-# Installing packages
-nix-env -iA \
-	nixpkgs.gcc \
-	nixpkgs.git \
-	nixpkgs.neovim \
-	nixpkgs.antibody \
-	nixpkgs.zsh 
+echo "*********************************************"
+echo "Running the following command in a nix shell:"
 
+export DOTFILE_INSTALL_COMMAND
+read -r -d '' DOTFILE_INSTALL_COMMAND << END_OF_COMMAND
 # Install dotfiles from local script
 SOURCE=${BASH_SOURCE[0]}
 
@@ -39,3 +36,11 @@ sudo chsh -s $(command -v zsh) $USER
 
 # Install NeoVim plugins
 nvim --headless +PlugInstall +qall
+END_OF_COMMAND
+
+echo $DOTFILE_INSTALL_COMMAND
+echo "*********************************************"
+
+# Start dev shell
+nix-shell ./nix/dev_env.nix --pure --run $DOTFILE_INSTALL_COMMAND
+

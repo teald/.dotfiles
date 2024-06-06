@@ -235,3 +235,61 @@ chsh -s $(command -v zsh)
 sh
 $ --version
 $SHELL 
+which exercism
+echo $EX_API_TOKEN
+echo $EX_API_TOKEN 2>1
+echo $EX_API_TOKEN 2&>1
+echo $EX_API_TOKEN
+echo EX_API_TOKEN=$EX_API_TOKEN
+exercism download --track=lua --exercise=lasagna
+pwd
+ls
+mv shell.nix ~/exercism/
+cd ..
+ls
+ls exercism/
+rm --rfv exercism/
+rm -rfv exercism/
+ls
+pwd
+cd
+cd exercism/
+ls
+cd lua/lasagna/
+ls
+nvim README.md 
+cd ..
+ls
+cd ..
+ls
+nvim shell.nix 
+lua lasagna_spec.lua 
+ls
+cat README.md 
+exercism help
+exercism test
+cat HELP.md 
+busted
+which lua
+ls
+cd lua/
+ls
+cd lasagna/
+ls
+ls -a
+cat .busted 
+cat .exercism/
+ls .exercism/
+nvim README.md 
+nvim ~/exercism/shell.nix 
+cd ~/exercism/
+nvim ~/exercism/shell.nix 
+nix-shell --help
+nvim ~/exercism/shell.nix 
+echo $SHELL
+quit
+exit
+which npm
+which node 
+which python
+python --version

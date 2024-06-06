@@ -15,4 +15,12 @@ compinit
 if [ -e /home/teal/.nix-profile/etc/profile.d/nix.sh ]; then . /home/teal/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Created by `pipx` on 2024-06-05 15:09:48
-export PATH="$PATH:/home/teal/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+
+DEFAULT_NIX_DEV_SHELL_PATH="$HOME/.dotfiles/nix/dev_env.nix"
+NIX_DEV_PATH="${NIX_DEV_PATH}:-${DEFAULT_NIX_DEV_SHELL_PATH}"
+
+# Enter nix development shell, if nix is available.
+if [ command -v nix-shell ]; then
+  nix-shell $NIX_DEV_PATH 
+fi
