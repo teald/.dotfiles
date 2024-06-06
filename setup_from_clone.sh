@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# NOTE this will not install nix, nor is it nix-dependent, but it may move some
+# nix files into the home directory.
+#
+# TODO: Check commands to see if the stow files are needed
+#	+ Maybe using some kind of config file in each stowed dir?
+#		+ Can stow ignore files in a package?
 
 set -e
 
@@ -42,11 +49,15 @@ else
 fi
 
 # Get the directories in this folder.
-FIND_COMMAND="find . -maxdepth 1 -type d ! -name ."
-REMOVE_SLASHES="sed -E \"s/\.[\/\\]//g\""
-REMOVE_GIT="grep -v \".git\""
 STOW_COMMAND="xargs -I {} $COMMAND --verbose {} --target=$HOME"
-DRY_COMMAND="$FIND_COMMAND | $REMOVE_SLASHES | $REMOVE_GIT"
+DRY_COMMAND="
+	find . -maxdepth 1 -type d | 
+	sed -E \"s/\.[\/\\]//g\" |
+	grep -v \"^.$\" |
+	grep -v \".git\" |
+	grep -v ".*/?" | 
+	grep -v "dotfile_backups""
+
 FULL_COMMAND="$DRY_COMMAND | $STOW_COMMAND"
 
 echo "The following command will be executed to install"
@@ -61,7 +72,7 @@ do
 	echo "    + $f"
 done
 
-echo "If so, type \"yes\". Otherwise, hit enter (or "
+echo "If so, type "yes". Otherwise, hit enter (or"
 echo "type anything else)."
 echo "response"
 echo "vvvvvvvv"
@@ -69,10 +80,35 @@ echo "vvvvvvvv"
 RESULT="__NO_RESULT"
 read RESULT
 
-if [[ "${RESULT,,}" != "yes" ]]
+# Force result to be lowercase
+RESULT="$(echo $RESULT | tr "[:upper:]" "[:lower:]")"
+
+if [[ "$RESULT" != "yes" ]]
 then
 	echo "Exiting..."
 	exit
 fi
 
+# Check if anything needs to be backed up.
+# TODO: This would be much better as a script/function that can easily be
+# reversed.
+DIRS="$(eval $DRY_COMMAND)"
+BACKUP_LOC=$(echo "$HOME/.dotfiles_backups/$( date ).backup" | sed -E "s/\s+/_/g")
+
+for d in $DIRS; do
+	ALL_FILES="$(find $d -mindepth 1 -maxdepth 1)"
+	for f in $ALL_FILES; do
+
+		ROOT=$(echo "$f" | sed -E "s/([^\/]*)\/(.*)/\2/g")
+
+		if [ -e "$HOME/$ROOT" ]; then
+			# Backup
+			mkdir -p "$BACKUP_LOC"
+			mv -v "$HOME/$ROOT" "$BACKUP_LOC"
+			echo "Moved $HOME/$ROOT to $BACKUP_LOC/$ROOT"
+		fi
+	done
+done
+
+echo "$FULL_COMMAND"
 eval "$FULL_COMMAND"

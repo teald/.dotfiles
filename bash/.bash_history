@@ -293,3 +293,9 @@ which npm
 which node 
 which python
 python --version
+which brew
+which python
+which nvim
+cd ..
+#SHLVL
+echo $SHLVL

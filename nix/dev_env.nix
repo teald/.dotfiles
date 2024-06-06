@@ -11,12 +11,15 @@
 { pkgs ? import <nixpkgs> {} }:
 pkgs.mkShellNoCC {
   packages = with pkgs; [
-    conda
     cowsay
     lolcat
+    lua
     neovim
     nodejs_22
     python312
+    rsync
+    rustc
     stow
+    zsh
   ];
 }
