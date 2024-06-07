@@ -11,38 +11,55 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/grep
+~MSle0~/default
+
+# Last Substitute Search Pattern:
+~MSle0&FULL_COMMAND
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1717619565,,"q"
+|2,0,1717718918,,"q"
+:w
+|2,0,1717718916,,"w"
+:W
+|2,0,1717718915,,"W"
+:vert split ~/.vimrc
+|2,0,1717718444,,"vert split ~/.vimrc"
+:wq
+|2,0,1717718290,,"wq"
+:vert term
+|2,0,1717718018,,"vert term"
+:~
+|2,0,1717718015,,"~"
+:Q
+|2,0,1717717060,,"Q"
+:vert resize 90
+|2,0,1717714961,,"vert resize 90"
+:vert resize 80
+|2,0,1717714956,,"vert resize 80"
+:e nix/dev_env.nix
+|2,0,1717712240,,"e nix/dev_env.nix"
+:split install.sh
+|2,0,1717712237,,"split install.sh"
+::w
+|2,0,1717710689,,":w"
 :q!
 |2,0,1717616695,,"q!"
 :!
 |2,0,1717616691,,"!"
-:wq
-|2,0,1717615045,,"wq"
-:w
-|2,0,1717615044,,"w"
 :vert split .zshrc.omz-uninstalled-2024-06-05_09-39-47
 |2,0,1717615004,,"vert split .zshrc.omz-uninstalled-2024-06-05_09-39-47"
 :vert split cookiecutter.json
 |2,0,1717610074,,"vert split cookiecutter.json"
-:Q
-|2,0,1717195331,,"Q"
 :'<,'>sort
 |2,0,1717194533,,"'<,'>sort"
-:W
-|2,0,1717194325,,"W"
 :split setup_from_clone.sh
 |2,0,1717193833,,"split setup_from_clone.sh"
 :split setup_from_cl
 |2,0,1717193821,,"split setup_from_cl"
-:vert term
-|2,0,1717193803,,"vert term"
 :wq!
 |2,0,1717177948,,"wq!"
 :set number
@@ -61,6 +78,10 @@ $
 |2,0,1693242654,,"vert split .bash_profile"
 
 # Search String History (newest to oldest):
+?/default
+|2,1,1717718022,47,"default"
+??FULL_COMMAND
+|2,1,1717716440,63,"FULL_COMMAND"
 ? @$
 |2,1,1717609559,,"@$"
 ?/grep
@@ -83,341 +104,554 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	alias ll='ls -alF'
-	alias la='ls -A'
-	alias l='ls -CF'
-	alias c='clear'
-	alias h='history'
-	alias p='pwd'
-	alias pysearch="grep -r --include='*.py' "
-	alias getdragons="git clone git@github.com:GeminiDRSoftware/DRAGONS.git"
-	alias install_dragons="conda install -y --force-reinstall conda-build -c conda-forge && conda install -y -v --force-reinstall gemini_calmgr gemini_obs_db ds9 -c ~/conda_pkgs -c conda-forge && pip install -e"
-	alias commit-diff="git diff --name-only | xargs git add && git commit"
-	
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-	
-	# Use vim keybindings for terminal
-	bindkey -v
-	
-	# >>> conda initialize >>>
-	# !! Contents within this block are managed by 'conda init' !!
-	__conda_setup="$('/Users/dillon.teal/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-	if [ $? -eq 0 ]; then
-	    eval "$__conda_setup"
-	else
-	    if [ -f "/Users/dillon.teal/miniconda/etc/profile.d/conda.sh" ]; then
-	        . "/Users/dillon.teal/miniconda/etc/profile.d/conda.sh"
-	    else
-	        export PATH="/Users/dillon.teal/miniconda/bin:$PATH"
-	    fi
-	fi
-	unset __conda_setup
-	# <<< conda initialize <<<
-	
-	export DRAGONS_TEST=~/testing_suite
-	
-	# Import functions for shell
-	source ~/scripts/zsh_functions.sh
-	
-	
-	# Created by `pipx` on 2024-05-29 18:47:14
-	export PATH="$PATH:/Users/dillon.teal/.local/bin"
-|3,1,0,1,39,0,1717615033,"alias ll='ls -alF'","alias la='ls -A'","alias l='ls -CF'","alias c='clear'","alias h='history'","alias p='pwd'","alias pysearch=\"grep -r --include='*.py' \"","alias getdragons=\"git clone git@github.com:GeminiDRSoftware/DRAGONS.git\"",>211
-|<"alias install_dragons=\"conda install -y --force-reinstall conda-build -c conda-forge && conda install -y -v --force-reinstall gemini_calmgr gemini_obs_db ds9 -c ~/conda_pkgs -c conda-forge && pip install -e\"","alias commit-diff=\"git diff --name-only | xargs git add && git commit\"","","eval \"$(/opt/homebrew/bin/brew shellenv)\"","","# Use vim keybindings for terminal","bindkey -v","","# >>> conda initialize >>>","# !! Contents within this block are managed by 'conda init' !!",>95
-|<"__conda_setup=\"$('/Users/dillon.teal/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)\"","if [ $? -eq 0 ]; then","    eval \"$__conda_setup\"","else","    if [ -f \"/Users/dillon.teal/miniconda/etc/profile.d/conda.sh\" ]; then","        . \"/Users/dillon.teal/miniconda/etc/profile.d/conda.sh\"","    else","        export PATH=\"/Users/dillon.teal/miniconda/bin:$PATH\"","    fi","fi","unset __conda_setup","# <<< conda initialize <<<","","export DRAGONS_TEST=~/testing_suite","",>30
-|<"# Import functions for shell","source ~/scripts/zsh_functions.sh","","","# Created by `pipx` on 2024-05-29 18:47:14","export PATH=\"$PATH:/Users/dillon.teal/.local/bin\""
-"1	LINE	0
-	<!--- Badges ---!>
-	
-	<
-|3,0,1,1,3,0,1717612002,"<!--- Badges ---!>","","<"
+"0	CHAR	0
+	tee /dev/tty
+|3,0,0,0,1,0,1717710679,"tee /dev/tty"
+""1	LINE	0
+	set number
+|3,1,1,1,1,0,1717718913,"set number"
 "2	LINE	0
-	{
-|3,0,2,1,1,0,1717611632,"{"
+	else
+|3,0,2,1,1,0,1717717980,"else"
 "3	LINE	0
-	}
-|3,0,3,1,1,0,1717611632,"}"
+		# Try brew
+|3,0,3,1,1,0,1717717978,"	# Try brew"
 "4	LINE	0
-		"package_name": 
-|3,0,4,1,1,0,1717611631,"	\"package_name\": "
+		NI
+|3,0,4,1,1,0,1717717305,"	NI"
 "5	LINE	0
-	    conda
-|3,0,5,1,1,0,1717199273,"    conda"
+	else
+|3,0,5,1,1,0,1717717305,"else"
 "6	LINE	0
 	
-	-- Markdown Preview
-	{
-	    "iamcco/markdown-preview.nvim",
-	    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	    ft = { "markdown" },
-	    build = function() vim.fn["mkdp#util#install"]() end,
-	}
-|3,0,6,1,8,0,1717199072,"","-- Markdown Preview","{","    \"iamcco/markdown-preview.nvim\",","    cmd = { \"MarkdownPreviewToggle\", \"MarkdownPreview\", \"MarkdownPreviewStop\" },","    ft = { \"markdown\" },","    build = function() vim.fn[\"mkdp#util#install\"]() end,","}"
+|3,0,6,1,1,0,1717717118,""
 "7	LINE	0
-	- [ ] Add brew install option for the script.
-|3,0,7,1,1,0,1717198332,"- [ ] Add brew install option for the script."
+	set -x
+|3,0,7,1,1,0,1717717118,"set -x"
 "8	LINE	0
-	
-|3,0,8,1,1,0,1717194325,""
+	set -e
+|3,0,8,1,1,0,1717717068,"set -e"
 "9	LINE	0
-	for f in 
-|3,0,9,1,1,0,1717194322,"for f in "
+	
+|3,0,9,1,1,0,1717716758,""
 "-	CHAR	0
-	Example 
-|3,0,36,0,1,0,1717611827,"Example "
+	DEFAULT_NIX_DEV_SHELL_PATH
+|3,0,36,0,1,0,1717717673,"DEFAULT_NIX_DEV_SHELL_PATH"
 
 # File marks:
-'0  10  1  ~/.dotfiles/install.sh
-|4,48,10,1,1717616695,"~/.dotfiles/install.sh"
-'1  104  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,49,104,0,1717615045,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
-'2  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,50,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
-'3  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,51,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
-'4  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,52,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
-'5  3  66  ~/Desktop/dragons_cookiecutter/README.md
-|4,53,3,66,1717611633,"~/Desktop/dragons_cookiecutter/README.md"
-'6  4  66  ~/Desktop/dragons_cookiecutter/README.md
-|4,54,4,66,1717611633,"~/Desktop/dragons_cookiecutter/README.md"
-'7  3  66  ~/Desktop/dragons_cookiecutter/README.md
-|4,55,3,66,1717611633,"~/Desktop/dragons_cookiecutter/README.md"
-'8  4  66  ~/Desktop/dragons_cookiecutter/README.md
-|4,56,4,66,1717611633,"~/Desktop/dragons_cookiecutter/README.md"
-'9  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,57,1,0,1717609564,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
+'0  63  51  ~/.vimrc
+|4,48,63,51,1717718918,"~/.vimrc"
+'1  1  0  ~/.dotfiles/.git/COMMIT_EDITMSG
+|4,49,1,0,1717718290,"~/.dotfiles/.git/COMMIT_EDITMSG"
+'2  26  42  ~/.zshrc
+|4,50,26,42,1717718082,"~/.zshrc"
+'3  30  33  ~/.zshrc
+|4,51,30,33,1717717995,"~/.zshrc"
+'4  30  33  ~/.zshrc
+|4,52,30,33,1717717995,"~/.zshrc"
+'5  32  0  ~/.zshrc
+|4,53,32,0,1717717932,"~/.zshrc"
+'6  32  0  ~/.zshrc
+|4,54,32,0,1717717932,"~/.zshrc"
+'7  32  0  ~/.zshrc
+|4,55,32,0,1717717932,"~/.zshrc"
+'8  32  0  ~/.zshrc
+|4,56,32,0,1717717932,"~/.zshrc"
+'9  4  0  ~/.zshrc
+|4,57,4,0,1717717681,"~/.zshrc"
 
 # Jumplist (newest first):
--'  10  1  ~/.dotfiles/install.sh
-|4,39,10,1,1717616695,"~/.dotfiles/install.sh"
--'  10  1  ~/.dotfiles/install.sh
-|4,39,10,1,1717616695,"~/.dotfiles/install.sh"
--'  1  0  ~/.dotfiles/install.sh
-|4,39,1,0,1717616661,"~/.dotfiles/install.sh"
--'  1  0  ~/.dotfiles/install.sh
-|4,39,1,0,1717616661,"~/.dotfiles/install.sh"
--'  104  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,104,0,1717615045,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  104  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,104,0,1717615045,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  104  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,104,0,1717615045,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  104  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,104,0,1717615045,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  1  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,1,0,1717615008,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  1  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,1,0,1717615008,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  1  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,1,0,1717615008,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  1  0  ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
-|4,39,1,0,1717615008,"~/.zshrc.omz-uninstalled-2024-06-05_09-39-47"
--'  45  0  ~/.zshrc
-|4,39,45,0,1717615004,"~/.zshrc"
--'  45  0  ~/.zshrc
-|4,39,45,0,1717615004,"~/.zshrc"
--'  45  0  ~/.zshrc
-|4,39,45,0,1717615004,"~/.zshrc"
--'  45  0  ~/.zshrc
-|4,39,45,0,1717615004,"~/.zshrc"
--'  40  0  ~/.zshrc
-|4,39,40,0,1717614992,"~/.zshrc"
--'  40  0  ~/.zshrc
-|4,39,40,0,1717614992,"~/.zshrc"
--'  40  0  ~/.zshrc
-|4,39,40,0,1717614992,"~/.zshrc"
--'  40  0  ~/.zshrc
-|4,39,40,0,1717614992,"~/.zshrc"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612167,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  1  0  ~/Desktop/dragons_cookiecutter/README.md
-|4,39,1,0,1717612003,"~/Desktop/dragons_cookiecutter/README.md"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  4  29  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,4,29,1717611924,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
--'  1  0  ~/Desktop/dragons_cookiecutter/cookiecutter.json
-|4,39,1,0,1717611782,"~/Desktop/dragons_cookiecutter/cookiecutter.json"
+-'  63  51  ~/.vimrc
+|4,39,63,51,1717718918,"~/.vimrc"
+-'  18  12  ~/.dotfiles/nix/dev_env.nix
+|4,39,18,12,1717718444,"~/.dotfiles/nix/dev_env.nix"
+-'  1  0  ~/.dotfiles/nix/dev_env.nix
+|4,39,1,0,1717718422,"~/.dotfiles/nix/dev_env.nix"
+-'  1  0  ~/.dotfiles/.git/COMMIT_EDITMSG
+|4,39,1,0,1717718290,"~/.dotfiles/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.dotfiles/.git/COMMIT_EDITMSG
+|4,39,1,0,1717718290,"~/.dotfiles/.git/COMMIT_EDITMSG"
+-'  26  42  ~/.zshrc
+|4,39,26,42,1717718082,"~/.zshrc"
+-'  26  42  ~/.zshrc
+|4,39,26,42,1717718082,"~/.zshrc"
+-'  26  42  ~/.zshrc
+|4,39,26,42,1717718082,"~/.zshrc"
+-'  26  42  ~/.zshrc
+|4,39,26,42,1717718082,"~/.zshrc"
+-'  11  0  ~/.zshrc
+|4,39,11,0,1717718018,"~/.zshrc"
+-'  11  0  ~/.zshrc
+|4,39,11,0,1717718018,"~/.zshrc"
+-'  11  0  ~/.zshrc
+|4,39,11,0,1717718018,"~/.zshrc"
+-'  11  0  ~/.zshrc
+|4,39,11,0,1717718018,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717718013,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717718013,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717718013,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717718013,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  30  33  ~/.zshrc
+|4,39,30,33,1717717995,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  32  4  ~/.zshrc
+|4,39,32,4,1717717977,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717958,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717958,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717958,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717958,"~/.zshrc"
+-'  32  0  ~/.zshrc
+|4,39,32,0,1717717932,"~/.zshrc"
+-'  32  0  ~/.zshrc
+|4,39,32,0,1717717932,"~/.zshrc"
+-'  32  0  ~/.zshrc
+|4,39,32,0,1717717932,"~/.zshrc"
+-'  32  0  ~/.zshrc
+|4,39,32,0,1717717932,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717931,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717931,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717931,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717931,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  4  0  ~/.zshrc
+|4,39,4,0,1717717681,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  31  25  ~/.zshrc
+|4,39,31,25,1717717678,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717666,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717666,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717666,"~/.zshrc"
+-'  1  0  ~/.zshrc
+|4,39,1,0,1717717666,"~/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
+-'  1  0  ~/.dotfiles/.zshrc
+|4,39,1,0,1717717663,"~/.dotfiles/.zshrc"
 
 # History of marks within files (newest to oldest):
 
-> ~/.dotfiles/install.sh
-	*	1717616694	0
-	"	10	1
-	^	10	4
-	.	10	0
-	+	17	17
-	+	18	15
+> ~/.vimrc
+	*	1717718918	0
+	"	63	51
+	^	63	52
+	.	63	51
+	+	64	0
+	+	1	1
+	+	63	51
+
+> ~/.dotfiles/nix/dev_env.nix
+	*	1717718917	0
+	"	18	12
+	^	18	13
+	.	18	12
+	+	23	6
+	+	26	4
 	+	14	0
-	+	10	0
+	+	26	0
+	+	20	6
+	+	24	3
+	+	14	0
+	+	24	0
+	+	21	3
+	+	21	0
+	+	22	8
+	+	23	0
+	+	18	12
+
+> ~/.dotfiles/.git/COMMIT_EDITMSG
+	*	1717718285	0
+	"	1	0
+
+> ~/.zshrc
+	*	1717718081	0
+	"	26	42
+	^	26	43
+	.	26	42
+	+	46	2
+	+	46	0
+	+	56	19
+	+	147	0
+	+	114	14
+	+	115	14
+	+	156	0
+	+	1	0
+	+	5	0
+	+	30	23
+	+	29	44
+	+	29	31
+	+	29	15
+	+	29	0
+	+	16	61
+	+	2	0
+	+	17	0
+	+	31	38
+	+	26	36
+	+	27	1
+	+	27	0
+	+	31	25
+	+	32	10
+	+	32	0
+	+	30	33
+	+	26	42
+
+> ~/.dotfiles/.zshrc
+	*	1717717662	0
+	"	1	0
+
+> ~/zshrc
+	*	1717716993	0
+	"	1	0
+
+> ~/.dotfiles/zshrc
+	*	1717716780	0
+	"	1	0
+
+> ~/.dotfiles/setup_from_clone.sh
+	*	1717716596	0
+	"	18	0
+	^	54	1
+	.	54	0
+	+	62	0
+	+	59	26
+	+	61	5
+	+	52	32
+	+	52	0
+	+	55	7
+	+	52	40
+	+	53	41
+	+	55	27
+	+	57	9
+	+	56	14
+	+	59	27
+	+	53	0
+	+	52	0
+	+	61	0
+	+	83	0
+	+	95	27
+	+	95	5
+	+	95	8
+	+	83	0
+	+	95	5
+	+	98	0
+	+	95	5
+	+	58	13
+	+	59	28
+	+	95	0
+	+	70	0
+	+	59	26
+	+	99	0
+	+	111	0
+	+	110	0
+	+	99	42
+	+	110	0
+	+	102	46
+	+	110	11
+	+	99	46
+	+	102	7
+	+	110	0
+	+	104	23
+	+	105	3
+	+	109	3
+	+	106	47
+	+	107	15
+	+	104	11
+	+	107	16
+	+	106	0
+	+	100	0
+	+	96	13
+	+	107	4
+	+	106	13
+	+	96	39
+	+	106	23
+	+	107	27
+	+	106	8
+	+	107	17
+	+	104	14
+	+	98	5
+	+	107	39
+	+	104	10
+	+	96	16
+	+	106	24
+	+	107	11
+	+	98	0
+	+	107	50
+	+	96	52
+	+	107	9
+	+	106	0
+	+	107	53
+	+	106	25
+	+	108	47
+	+	107	39
+	+	93	73
+	+	96	75
+	+	107	11
+	+	103	0
+	+	101	0
+	+	114	0
+	+	109	0
+	+	107	0
+	+	110	0
+	+	112	0
+	+	108	18
+	+	107	7
+	+	108	0
+	+	1	0
+	+	3	79
+	+	7	59
+	+	8	39
+	+	113	19
+	+	60	0
+	+	59	27
+	+	53	18
+	+	59	26
+	+	60	0
+	+	53	12
+	+	55	0
+	+	53	13
+	+	54	0
+
+> ~/.dotfiles/install.sh
+	*	1717712237	0
+	"	1	0
+	^	69	5
+	.	69	4
+	+	60	70
+	+	60	13
+	+	60	10
+	+	60	19
+	+	60	15
+	+	60	10
+	+	60	24
+	+	60	1
+	+	1	0
+	+	60	0
+	+	12	0
+	+	8	1
+	+	7	4
+	+	12	17
+	+	11	1
+	+	10	24
+	+	14	0
+	+	15	52
+	+	16	74
+	+	22	12
+	+	21	18
+	+	25	4
+	+	60	0
+	+	28	2
+	+	60	0
+	+	26	10
+	+	26	0
+	+	30	6
+	+	31	1
+	+	60	0
+	+	19	0
+	+	20	28
+	+	23	29
+	+	22	26
+	+	18	40
+	+	20	29
+	+	21	18
+	+	24	19
+	+	33	33
+	+	60	0
+	+	59	0
+	+	61	0
+	+	34	0
+	+	60	0
+	+	60	40
+	+	60	0
+	+	55	0
+	+	41	0
+	+	60	0
+	+	41	0
+	+	60	0
+	+	61	5
+	+	71	5
+	+	57	78
+	+	58	0
+	+	12	79
+	+	12	80
+	+	13	0
+	+	12	79
+	+	59	71
+	+	61	28
+	+	71	0
+	+	74	54
+	+	74	28
+	+	53	0
+	+	74	28
+	+	40	6
+	+	38	6
+	+	37	32
+	+	49	0
+	+	37	0
+	+	40	0
+	+	42	24
+	+	43	0
+	+	73	25
+	+	42	0
+	+	35	0
+	+	40	0
+	+	39	22
+	+	74	66
+	+	77	44
+	+	79	15
+	+	77	9
+	+	86	2
+	+	87	0
+	+	78	19
+	+	81	20
+	+	85	0
+	+	84	7
+	+	85	7
+	+	85	0
+	+	53	1
+	+	53	0
+	+	63	0
+	+	65	0
+	+	66	0
+	+	66	5
+	+	67	19
+	+	69	4
 
 > ~/.zshrc.omz-uninstalled-2024-06-05_09-39-47
 	*	1717615045	0
 	"	104	0
-
-> ~/.zshrc
-	*	1717615044	0
-	"	13	0
-	^	50	20
-	.	1	0
-	+	40	2
-	+	40	0
-	+	50	19
-	+	141	0
-	+	108	14
-	+	109	14
-	+	150	0
-	+	1	0
 
 > ~/Desktop/dragons_cookiecutter/README.md
 	*	1717612166	0
@@ -478,20 +712,6 @@ $
 	*	1717196066	0
 	"	1	0
 
-> ~/.dotfiles/setup_from_clone.sh
-	*	1717195332	0
-	"	74	0
-	^	73	53
-	.	73	52
-	+	49	12
-	+	50	28
-	+	72	29
-	+	73	22
-	+	75	8
-	+	81	42
-	+	82	0
-	+	73	52
-
 > /private/etc/fstab
 	*	1717178283	0
 	"	5	0
@@ -547,9 +767,3 @@ $
 > ~/.bashrc
 	*	1693244480	0
 	"	1	0
-
-> ~/.vimrc
-	*	1693240679	0
-	"	1	0
-	.	2	0
-	+	2	0
