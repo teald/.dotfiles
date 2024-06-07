@@ -22,4 +22,6 @@ pkgs.mkShellNoCC {
     stow
     zsh
   ];
+
+  DOTFILE_LOAD_NIX_SHELL="no";
 }

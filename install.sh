@@ -51,7 +51,7 @@ install_command() {
 	$DIR/setup_from_clone.sh
 
 	# Install NeoVim plugins
-	nvim --headless +PlugInstall +qall
+	# nvim --headless +PlugInstall +qall
 }
 
 # Serialize the funciton to a string and store it in the installation variable.
@@ -73,15 +73,4 @@ sudo chsh -s $(command -v zsh) $USER
 echo "Starting dev shell."
 nix-shell ./nix/dev_env.nix --run "$DOTFILE_INSTALL_COMMAND" --pure
 
-# Enter .zshrc or .bashrc env
-if [ -f ~/.zshrc ] -a [ comamnd -v zsh ]; then
-	echo "Using zsh..."
-	source ~/.zshrc
-elif [ -f ~/.bashrc ]; then
-	echo "Using bash..."
-	source ~/.bashrc
-else
-	echo "COULD NOT START A SHELL: NO RC FILES COUND FOR"
-	echo "ZSH OR BASH (~/.zshrc or ~/.bashrc, respectively)."
-fi
-
+# Restart the shell and enter it

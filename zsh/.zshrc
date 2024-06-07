@@ -27,6 +27,6 @@ if [ ! $NIX_DEV_SHELL ]; then
 fi
 
 # Enter nix development shell, if nix is available.
-if command -v nix-shell >/dev/null; then
+if ! command -v nix-shell >/dev/null  -a [ NIX_LOAD != "no" ]; then
   nix-shell $NIX_DEV_SHELL
 fi
