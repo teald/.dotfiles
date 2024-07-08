@@ -41,6 +41,14 @@ alias mamba="micromamba"
 # Git info (prints above the standard prompt for compactness).
 source ~/git_prompt.sh
 GIT_PS1_SHOWDIRTYSTATE="true"
-setopt PROMPT_SUBST ; PS1='%F{green}%n%f@%F{magenta}%m%f|%F{red}%c%f%F{blue}$(__git_ps1 " (%s)")%f|\$ '
-#export PROMPT=$PROMPT"%F{green}%n%f|%F{blue}%D{%I:%M:%S}%f|%F{magenta}%d%f $ "
+NEWLINE='
+'  # This is kinda funny, when you think about it.
+TIME='%F{gray}%D{%H:%M:%S}%f'
+DATE='%F{yellow}%D{%b %d, %Y}%f'
 
+# TODO: Genuinely cursed formatting here.
+NEWLINE=$'\n'
+PS1_ABOVE="$DATE @ $TIME$NEWLINE"
+
+setopt PROMPT_SUBST ; PS1=$PS1_ABOVE'%F{green}%n%f@%F{magenta}%m%f|%F{red}%c%f%F{blue}$(__git_ps1 " (%s)")%f|\$ '
+#export PROMPT=$PROMPT"%F{green}%n%f|%F{blue}%D{%I:%M:%S}%f|%F{magenta}%d%f $ "
