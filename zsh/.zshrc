@@ -49,6 +49,7 @@ DATE='%F{yellow}%D{%b %d, %Y}%f'
 # TODO: Genuinely cursed formatting here.
 NEWLINE=$'\n'
 PS1_ABOVE="$DATE @ $TIME$NEWLINE"
+PS1_BELOW='%F{green}%n%f@%F{magenta}%m%f | %F{red}%c%f%F{blue}$(__git_ps1 " (%s)")%f|\$ '
 
-setopt PROMPT_SUBST ; PS1=$PS1_ABOVE'%F{green}%n%f@%F{magenta}%m%f|%F{red}%c%f%F{blue}$(__git_ps1 " (%s)")%f|\$ '
+setopt PROMPT_SUBST ; PS1=$PS1_ABOVE$PS1_BELOW
 #export PROMPT=$PROMPT"%F{green}%n%f|%F{blue}%D{%I:%M:%S}%f|%F{magenta}%d%f $ "
