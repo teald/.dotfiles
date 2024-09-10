@@ -2,75 +2,42 @@
 
 set -e
 
-# This script installs nix and dotfiles using bash.
-
-# Old Nix install
-# curl -L https://nixos.org/nix/install | sh
-
-# Determinate nix install
-# this uses nix-install (https://github.com/DeterminateSystems/nix-installer)
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
-	| sh -s -- install
-
-NIX_SHELL_PATH="~/.nix-profile/etc/profile.d/nix.sh"
-NIX_DAEMON_PATH="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
-
-# TODO: This could probably be automated.
-if [ -f $NIX_SHELL_PATH ]; then
-	echo "Found $NIX_SHELL_PATH"
-	. $NIX_SHELL_PATH
-elif [ -f $NIX_DAEMON_PATH ]; then
-	echo "Found $NIX_DAEMON_PATH"
-	. $NIX_DAEMON_PATH
-else
-	echo "Could not find a nix daemon or profile. Checked: "
-	echo "  + $NIX_SHELL_PATH"
-	echo "  + $NIX_DAEMON_PATH"
-	echo "Exiting..."
-	exit 1
+# This script installs homebrew and .dotfiles using bash
+# Homebrew script install.
+if ! command -v brew &> /dev/null ; then
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo "Creating install command..."
-echo "*********************************************"
-SOURCE=${BASH_SOURCE[0]}
+# Check for install in a couple locations:
+LINUXBREW_LOC="/home/linuxbrew/.linuxbrew/bin/brew"
+MACBREW_LOC="/TODO_NEED_THIS_PATH"
+if [ -f $LINUXBREW_LOC ]; then
+    HOMEBREW_BIN=$LINUXBREW_LOC
+elif [ -f $MACBREW_LOC ]; then
+    HOMEBREW_BIN=$MACBREW_LOC
+else
+    echo "Can't find the binary :["
 
-install_command() {
-	set -e
-	echo $(command -v lua)
+    # Uninstall
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+    exit 1
+fi
 
-	# Install dotfiles from local script
-# Handles symbolic links # From: https://stackoverflow.com/a/246128
-	while [ -L "$SOURCE" ]; do
-	  DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
-	  SOURCE=$(readlink "$SOURCE")
-	  [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE 
-	done
+packages="wget stow pipx pyenv neovim zsh find gcc rust"
 
-	DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+for package in $packages; do
+    $HOMEBREW_BIN install $package
+done
 
-	$DIR/setup_from_clone.sh
+# Install the dotfiles where they need to go.
+for directory in */; do
+    stow $directory --adopt
+done
 
-	# Install NeoVim plugins
-	# nvim --headless +PlugInstall +qall
-}
+# Initialize the homebrew environment.
+eval "$($HOMEBREW_BIN shellenv)"
 
-# Serialize the funciton to a string and store it in the installation variable.
+echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.zshrc
 
-DOTFILE_INSTALL_COMMAND="$(declare -f install_command); install_command"
-
-echo $DOTFILE_INSTALL_COMMAND
-echo "*********************************************"
-
-
-# Ensure zsh is a login shell.
-echo "Ensuring zsh is the shell used as the login shell."
-command -v zsh | sudo tee -a /etc/shells
-
-sudo chsh -s $(command -v zsh) $USER
-
-
-# Start dev shell
-echo "Starting dev shell."
-nix-shell ./nix/dev_env.nix --run "$DOTFILE_INSTALL_COMMAND" --pure
-
-# Restart the shell and enter it
+pipx install poetry
+pipx install nox

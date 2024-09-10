@@ -1,3 +1,7 @@
 [user]
 	email = teal.dillon@gmail.com
 	name = teald
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim

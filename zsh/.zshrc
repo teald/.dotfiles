@@ -1,6 +1,6 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
+HISTSIZE=2000
 SAVEHIST=10000
 
 bindkey -v
@@ -53,3 +53,16 @@ PS1_BELOW='%F{green}%n%f@%F{magenta}%m%f | %F{red}%c%f%F{blue}$(__git_ps1 " (%s)
 
 setopt PROMPT_SUBST ; PS1=$PS1_ABOVE$PS1_BELOW
 #export PROMPT=$PROMPT"%F{green}%n%f|%F{blue}%D{%I:%M:%S}%f|%F{magenta}%d%f $ "
+
+# Initialize brew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
+
+# Pyenv initialization
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Created by `pipx` on 2024-07-25 05:56:26
+export PATH="$PATH:/home/teal/.local/bin"
+export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/mesa/24.1.4/lib/
