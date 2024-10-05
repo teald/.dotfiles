@@ -13,29 +13,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-if [ -e $HOME.nix-profile/etc/profile.d/nix.sh ]; then
-	. $HOME/.nix-profile/etc/profile.d/nix.sh;
-fi # added by Nix installer
-
 # Locales
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 # WRT using dotfiles, this will be updated when micromamba is installed.
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/nix/store/bfd6gwj5klgdfbkjw3qavfrwk7y9aiyb-micromamba-1.5.8/bin/micromamba';
-export MAMBA_ROOT_PREFIX='bash';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
-
-# Alias for micromamba
-alias mamba="micromamba"
 
 # Prompt engineering.
 # Git info (prints above the standard prompt for compactness).
@@ -53,3 +34,43 @@ PS1_BELOW='%F{green}%n%f@%F{magenta}%m%f | %F{red}%c%f%F{blue}$(__git_ps1 " (%s)
 
 setopt PROMPT_SUBST ; PS1=$PS1_ABOVE$PS1_BELOW
 #export PROMPT=$PROMPT"%F{green}%n%f|%F{blue}%D{%I:%M:%S}%f|%F{magenta}%d%f $ "
+
+alias local_venv='find . -maxdepth 1 -name "VENV*" -or -name ".venv" -and -type d | sed 1q | xargs -I {} source {}/bin/activate'
+
+# Load pyenv automatically by appending
+# the following to 
+# ~/.zprofile (for login shells)
+# and ~/.zshrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Rust
+. $HOME/.cargo/env
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/teald/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/teald/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/teald/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/teald/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/teald/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/teald/miniforge3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+
+# Created by `pipx` on 2024-08-30 01:50:43
+export PATH="$PATH:/home/teald/.local/bin"
+
+# Created by `pipx` on 2024-08-30 01:52:04
+export PATH="$PATH:/usr/local/bin"

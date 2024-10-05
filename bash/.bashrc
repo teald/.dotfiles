@@ -130,3 +130,4 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+. "$HOME/.cargo/env"
